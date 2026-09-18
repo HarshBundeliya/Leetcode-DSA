@@ -1,5 +1,7 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
+        # Time Complexity = O(n)
+        # Space Complexity = O(n)
         map = {}
         for i, num in enumerate(nums):
             if num in map:
