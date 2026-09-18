@@ -1,8 +1,18 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        # Time complexity O(n^2)
-        # Space Complexity O(n)
-        for i, num1 in enumerate(nums):
-            for j, num2 in enumerate(nums[i+1:]):
-                if num1 + num2 == target:
-                    return [i,j+i+1]
+        map = {}
+        for i, num in enumerate(nums):
+            if num in map:
+                map[num].append(i)
+            else:
+                map[num] = [i]
+        for i, num in enumerate(nums):
+            sec_num = target-num
+            if sec_num in map:
+                sec_num_index = map[sec_num]
+                if sec_num_index==[i]:
+                    continue
+                elif len(sec_num_index)==1:
+                    return [i,sec_num_index[0]]
+                else:
+                    return sec_num_index
