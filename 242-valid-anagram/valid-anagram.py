@@ -1,7 +1,7 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         # Time Complexity = O(n)
-        # Space Complexity = O(n*m)
+        # Space Complexity = O(n)
         if len(s) != len(t):
             return False
         
@@ -20,8 +20,6 @@ class Solution:
                 t_map[j] = 1
 
         for k, v in s_map.items():
-            if k in t_map and v ==  t_map[k]:
-                pass
-            else:
+            if k not in t_map or v !=  t_map[k]:
                 return False
         return True
