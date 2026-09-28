@@ -7,8 +7,7 @@ class Solution:
         l = 0
         r = len(height) - 1
         while l<r:
-            shorter_height = min(height[l], height[r])
-            current_max = shorter_height * (r-l)
+            current_max = min(height[l], height[r]) * (r-l)
             res = max(current_max, res)
             
             if height[l] < height[r]:
