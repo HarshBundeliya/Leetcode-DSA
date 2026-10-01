@@ -2,12 +2,12 @@ class stack:
     def __init__(self):
         self.values = []
     def push(self, x):
-        self.values = [x] + self.values
+        self.values.append(x)
     def pop(self):
-        return self.values.pop(0)
+        return self.values.pop()
 
 # Time Complexity = O(n)
-# Space complexity = O(1)
+# Space complexity = O(n)
 class Solution:
     def isValid(self, s: str) -> bool:
         valied_open_close = {'(':')', '[':']', '{':'}'}
@@ -18,6 +18,4 @@ class Solution:
             else:
                 if len(data.values)==0 or i != valied_open_close[data.pop()]:
                     return False
-        if len(data.values)>0:
-            return False
-        return True
+        return len(data.values)==0
