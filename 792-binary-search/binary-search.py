@@ -1,5 +1,7 @@
 class Solution: 
     def search(self, nums: list[int], target: int) -> int:
+        # Time Complexity = O(log(n))
+        # Space Complexity = O(log(n))
         s = 0
         e = len(nums)-1
         def binary_search(nums, s, e):
