@@ -1,25 +1,20 @@
 class Solution:
     def trap(self, height: list[int]) -> int:
         # Time Complexity = O(n)
-        # Space Complexity = O(n)
+        # Space Complexity = O(1)
         n = len(height)
-        left_max = [0] * n
-        right_max = [0] * n
-        current_left_max = 0
-        current_right_max = 0
+        left_max = 0
+        right_max = 0
         l = 0
         r = n - 1
-        while l < n and r > -1:
-            current_left_max = max(current_left_max, height[l])
-            left_max[l] = current_left_max
-            l += 1
-            current_right_max = max(current_right_max, height[r])
-            right_max[r] = current_right_max
-            r -= 1
-        
         total_water = 0
-        for i in range(len(height)):
-            water = max(0, min(left_max[i], right_max[i]) - height[i])
-            total_water += water
-        
+        while l <= r:
+            if height[l] < height[r]:
+                left_max = max(left_max, height[l])
+                total_water += left_max - height[l]
+                l += 1
+            else:
+                right_max = max(right_max, height[r])
+                total_water += right_max - height[r]
+                r -= 1
         return total_water
