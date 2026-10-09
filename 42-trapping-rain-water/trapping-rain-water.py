@@ -5,9 +5,9 @@ class Solution:
         n = len(height)
         left_max = 0
         right_max = 0
+        total_water = 0
         l = 0
         r = n - 1
-        total_water = 0
         while l <= r:
             if height[l] < height[r]:
                 left_max = max(left_max, height[l])
