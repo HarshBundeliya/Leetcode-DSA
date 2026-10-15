@@ -15,6 +15,8 @@ class Solution:
                     seen.remove(s[start])
                     start += 1
                 seen.add(ch)
+            
             current_max = len(seen)
             result = max(current_max, result)
+            
         return result
