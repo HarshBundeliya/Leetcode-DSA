@@ -5,18 +5,14 @@ class Solution:
         Space Complexity = O(n)
         """
         result = 0
-        seen = set()
+        last_seen = {}
         start = 0
         for end, ch in enumerate(s):
-            if ch not in seen:
-                seen.add(ch)
-            else:
-                while ch in seen:
-                    seen.remove(s[start])
-                    start += 1
-                seen.add(ch)
+            if ch in last_seen:
+                start = max(start, last_seen[ch] + 1)
+            last_seen[ch] = end
             
-            current_max = len(seen)
+            current_max = end - start + 1
             result = max(current_max, result)
             
         return result
