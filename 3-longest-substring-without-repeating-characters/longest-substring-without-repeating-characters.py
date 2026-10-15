@@ -10,13 +10,11 @@ class Solution:
         for end, ch in enumerate(s):
             if ch not in seen:
                 seen.add(ch)
-                current_max = len(seen)
-                result = max(current_max, result)
             else:
-                current_max = len(seen)
-                result = max(current_max, result)
                 while ch in seen:
                     seen.remove(s[start])
                     start += 1
                 seen.add(ch)
+            current_max = len(seen)
+            result = max(current_max, result)
         return result
