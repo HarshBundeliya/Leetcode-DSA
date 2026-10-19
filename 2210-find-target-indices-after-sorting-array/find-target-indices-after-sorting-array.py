@@ -1,27 +1,17 @@
 class Solution:
     def targetIndices(self, nums: list[int], target: int) -> list[int]:
         """
-        Time Complexity = O(nlog(n))
-        Space Complexity = O(1)
+        Time Complexity = O(n)
+        Space Complexity = O(k) ; where k is target freq
         """
         n = len(nums)
-        nums.sort()
-        l = 0
-        r = n-1
-        while l <= r:
-            mid = (l+r)//2
-            if target == nums[mid]:
-                temp = mid
-                while temp>=0 and target == nums[temp]:
-                    temp-=1
-                temp_2 = temp + 1
-                result = []
-                while temp_2<n and target == nums[temp_2]:
-                    result.append(temp_2)
-                    temp_2+=1
-                return result
-            elif nums[mid] < target:
-                l = mid+1
-            else:
-                r = mid-1
-        return []
+        target_freq = 0
+        less_freq = 0
+        for num in nums:
+            if num == target:
+                target_freq += 1
+            elif num < target:
+                less_freq += 1
+        if target_freq == 0:
+            return []
+        return [i for i in range(less_freq, less_freq + target_freq)]
