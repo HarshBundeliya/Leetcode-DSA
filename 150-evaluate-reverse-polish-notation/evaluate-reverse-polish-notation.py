@@ -4,7 +4,12 @@ class Solution:
         Time Complexity = O(n)
         Space Complexity = O(n)
         """
-        valid_operators_map = {"+": lambda x,y : x+y, "-": lambda x,y: x-y, "*": lambda x,y : x*y, "/": lambda x,y : int(x/y)}
+        def divide(x, y):
+            q = abs(x)//abs(y)
+            if (x<0 and y<0) or (x>0 and y>0):
+                return q
+            return -q
+        valid_operators_map = {"+": lambda x,y : x+y, "-": lambda x,y: x-y, "*": lambda x,y : x*y, "/": divide} #lambda x,y : int(x/y)}
 
         stack = []
         for token in tokens:
