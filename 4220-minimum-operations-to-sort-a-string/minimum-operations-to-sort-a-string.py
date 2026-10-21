@@ -20,7 +20,7 @@ class Solution:
 
         if first==mn or last==mx:
             return 1
-        elif first==mx and last==mn:
-            if s.count(mx) == 1 and s.count(mn) == 1:
-                return 3
-        return 2
+        for i in range(1,n-1):
+            if s[i] == mx or s[i] == mn:
+                return 2
+        return 3
