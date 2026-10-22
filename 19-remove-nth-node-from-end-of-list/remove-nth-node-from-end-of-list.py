@@ -5,6 +5,8 @@ class ListNode:
         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: ListNode | None, n: int) -> ListNode | None:
+        # Time Complexity = O(n)
+        # Space Complexity = O(1)
         current = head
         len_list = 0
         while current:
