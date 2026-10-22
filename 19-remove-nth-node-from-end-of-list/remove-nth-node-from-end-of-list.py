@@ -7,19 +7,19 @@ class Solution:
     def removeNthFromEnd(self, head: ListNode | None, n: int) -> ListNode | None:
         # Time Complexity = O(n)
         # Space Complexity = O(1)
-        current = head
-        len_list = 0
-        while current:
-            current = current.next
-            len_list += 1 
+        slow = head
+        fast = head
+        while n>=0:
+            if fast:
+                fast = fast.next
+                n-=1
+            else:
+                return head.next
+                
+        while fast:
+            fast = fast.next
+            slow = slow.next
         
-        target = len_list - n
-        if target == 0:
-            return head.next
+        slow.next = slow.next.next
 
-        new_current = head
-        for i in range(target - 1):
-            new_current = new_current.next
-        
-        new_current.next = new_current.next.next
         return head
