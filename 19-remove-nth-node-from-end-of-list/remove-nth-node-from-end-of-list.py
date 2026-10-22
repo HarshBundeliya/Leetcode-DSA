@@ -21,7 +21,5 @@ class Solution:
         for i in range(target - 1):
             new_current = new_current.next
         
-        if new_current and new_current.next:
-            new_current.next = new_current.next.next
-        
+        new_current.next = new_current.next.next
         return head
