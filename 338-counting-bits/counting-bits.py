@@ -1,7 +1,7 @@
 class Solution:
     def countBits(self, n: int) -> list[int]:
         """
-        Time Complexity = O(n)
+        Time Complexity = O(32n)
         Space Complexity = O(n)
         """
         result = []
