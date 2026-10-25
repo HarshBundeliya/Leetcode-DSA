@@ -4,7 +4,14 @@ class Solution:
         Time Complexity = O(n)
         Space Complexity = O(1)
         """
+        # n = len(nums)
+        # expected_sum = n*(n+1)//2
+        # actual_sum = sum(nums)
+        # return expected_sum - actual_sum
+
         n = len(nums)
-        expected_sum = n*(n+1)//2
-        actual_sum = sum(nums)
-        return expected_sum - actual_sum
+        missing = n
+        for i, num in enumerate(nums):
+            missing ^= i
+            missing ^= num
+        return missing
