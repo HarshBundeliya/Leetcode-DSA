@@ -6,6 +6,9 @@ class Solution:
 
         Incrementing n-1 elements is equivalent to decrementing one element. 
         So, make every element equal to the minimum.
+        
+        Original problem: Increment n-1 elements until all are equal.
+        Equivalent problem: Decrement one element at a time until all are equal.
         """
         
         result = 0
