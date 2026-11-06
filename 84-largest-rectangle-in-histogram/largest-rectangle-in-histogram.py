@@ -12,11 +12,8 @@ class Solution:
 
             while stack and heights[stack[-1]] >= h:
                 height = heights[stack.pop()]
-                if stack:
-                    left = stack[-1]
-                else:
-                    left = -1
-                area = height * (i - left -1)
+                width = i - stack[-1] - 1 if stack else i
+                area = height * width
                 best = max(best, area)
             stack.append(i)
         return best
