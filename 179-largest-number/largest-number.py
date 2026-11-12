@@ -21,6 +21,10 @@ class Solution:
         - Since "330" > "303", 3 must come before 30.
         Result: "330".
 
+        - compare(a, b) = your comparison rules.
+        - cmp_to_key(compare) = adapter for Python sorting.
+        - sort() = actually performs the sorting.
+
         Time Complexity = O(nlogn * k)
         Space Complexity = O(n * k) ; where k: maximum number of digits in an element.
         for the converted strings and sorting overhead, excluding the output string
