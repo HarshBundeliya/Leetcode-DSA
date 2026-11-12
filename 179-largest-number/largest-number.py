@@ -21,7 +21,9 @@ class Solution:
         - Since "330" > "303", 3 must come before 30.
         Result: "330".
 
-        - compare(a, b) = your comparison rules.
+        - compare(a, b) = your comparison rules. where a come befor b 
+        (Python's sorting algorithm decides which pairs to compare. 
+        Your comparator only tells it the preferred order for each pair.)
         - cmp_to_key(compare) = adapter for Python sorting.
         - sort() = actually performs the sorting.
 
